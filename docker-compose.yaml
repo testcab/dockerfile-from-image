@@ -1,0 +1,7 @@
+dockerfile-from-image:
+  image: testcab/dockerfile-from-image
+  volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+  command:
+    - --full-tree
+    - ${DOCKER_IMAGE}
