@@ -1,13 +1,16 @@
-FROM alpine:3.2
-MAINTAINER CenturyLink Labs <clt-labs-futuretech@centurylink.com>
+FROM ruby:2-alpine
 
-RUN apk --update add ruby-dev ca-certificates && \
-    gem install --no-rdoc --no-ri docker-api && \
-    apk del ruby-dev ca-certificates && \
-    apk add ruby ruby-json && \
-    rm /var/cache/apk/*
+MAINTAINER test.cab <dockerfile-from-image@test.cab>
 
-ADD dockerfile-from-image.rb /usr/src/app/dockerfile-from-image.rb
+# throw errors if Gemfile has been modified since Gemfile.lock
+RUN bundle config --global frozen 1
 
-ENTRYPOINT ["/usr/src/app/dockerfile-from-image.rb"]
+WORKDIR /usr/src/app
+
+COPY Gemfile Gemfile.lock ./
+RUN bundle install
+
+COPY dockerfile-from-image.rb .
+
+ENTRYPOINT ["./dockerfile-from-image.rb"]
 CMD ["--help"]
