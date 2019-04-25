@@ -1,5 +1,6 @@
-## dockerfile-from-image
+## testcab/dockerfile-from-image
 
+[![docker build automated](https://img.shields.io/docker/cloud/automated/testcab/dockerfile-from-image.svg)](https://hub.docker.com/r/testcab/dockerfile-from-image "testcab/dockerfile-from-image")
 [![](https://images.microbadger.com/badges/image/testcab/dockerfile-from-image.svg)](https://microbadger.com/images/testcab/dockerfile-from-image "Get your own image badge on microbadger.com")
 
 Reverse-engineers a Dockerfile from a Docker image.
