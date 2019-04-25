@@ -1,5 +1,6 @@
 ## dockerfile-from-image
-[![](https://badge.imagelayers.io/centurylink/dockerfile-from-image.svg)](https://imagelayers.io/?images=centurylink/dockerfile-from-image:latest 'Get your own badge on imagelayers.io')
+
+[![](https://images.microbadger.com/badges/image/testcab/dockerfile-from-image.svg)](https://microbadger.com/images/testcab/dockerfile-from-image "Get your own image badge on microbadger.com")
 
 Reverse-engineers a Dockerfile from a Docker image.
 
